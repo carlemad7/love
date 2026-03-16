@@ -8,26 +8,27 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 background:linear-gradient(135deg,#FEFAE0,#FAEDCD);
 overflow:hidden;
+color:#3a3a3a;
 }
 
 .container{
-background:white;
+background:#ffffff;
 padding:40px;
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+box-shadow:0 12px 35px rgba(0,0,0,0.15);
 text-align:center;
-max-width:500px;
+max-width:520px;
 }
 
 h1{
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 button{
@@ -37,12 +38,13 @@ margin:10px;
 border-radius:12px;
 font-size:16px;
 cursor:pointer;
-background:#D3FAC7;
-transition:0.2s;
+background:#FFB4A2;
+color:white;
+transition:0.25s;
 }
 
 button:hover{
-background:#B7E4C7;
+background:#E5989B;
 }
 
 #loveMeter{
@@ -52,7 +54,7 @@ width:100%;
 .emoji{
 position:absolute;
 font-size:28px;
-opacity:0.7;
+opacity:0.8;
 animation:float 15s linear infinite;
 }
 
@@ -64,16 +66,15 @@ animation:float 15s linear infinite;
 .heart{
 position:absolute;
 font-size:30px;
-animation:float 10s linear infinite;
+animation:float 8s linear infinite;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- Omar Khairat music -->
+<!-- Music -->
 <iframe 
 width="0"
 height="0"
@@ -85,10 +86,11 @@ src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/copilotbassem
 
 <div class="container" id="main">
 
-<h1 id="question">Do you like me?</h1>
+<h1>Heyy Koukii ❤️</h1>
+<h2>Do you like me?</h2>
 
 <button onclick="yes1()">Yes</button>
-<button id="noBtn" onclick="secret()">No</button>
+<button id="noBtn">No</button>
 
 </div>
 
@@ -119,17 +121,13 @@ const noBtn=document.getElementById("noBtn")
 
 noBtn.addEventListener("mouseover",()=>{
 
+alert("Like you? haha I love you ❤️")
+
 noBtn.style.position="absolute"
 noBtn.style.left=Math.random()*80+"%"
 noBtn.style.top=Math.random()*80+"%"
 
 })
-
-function secret(){
-
-alert("I don't like you, I love you ❤️")
-
-}
 
 function yes1(){
 
@@ -187,21 +185,7 @@ document.getElementById("main").innerHTML=`
 <h1>You are crazyyyyyy ❤️</h1>
 
 <p>
-Hey kouki i know what we’re going through isn’t easy and that this is a a rough time but i wanted to tell you how proud i am of youu.
-
-You are actually the strongest person i ever met and your faith is even stronger.
-
-I want you to know that I will always be here for you and never leave your side.
-
-Everytime I say I love you more, I don't mean more than you love me.
-
-I mean I love you more than the bad days ahead of us,
-more than any fight,
-more than any distance,
-more than any obstacle,
-and more than the odds stacked against me.
-
-I love you more than anything.
+Hey kouki i know what we’re going through isn’t easy and that this is a rough time but i wanted to tell you how proud i am of youu. You are actually the strongest person i ever met. And you are able to go through shit that no one would ever be able to handle. You are so strong and your faith is even stronger, and i am so proud of you. And i want you to know that i am here for youu through everything and that i will never ever leave your side. I may not be able to do much but i try my best for you. I dont want you to feel that youre going through something alone 5als. Aw that you are not understood or listened to. Because as i am alive you will always have someone that is there for you, listens to you, understands, by3ksk. You are getting the full package. On a serious note, everytime i say i love you more, i dont mean i love you more than you love me, i mean i love you more than the bad days ahead of us, i love you more than any fight we ever have, i love you more than any rough time we’re going through, i love you more than any amount of distance keeping us apart, i love you more than any obstacle that comes between us, and i love you more than the odds that are stacked against me. I love you more than anything. 
 </p>
 
 `
