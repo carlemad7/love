@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I LOVE YOU</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg,#FEFAE0,#FAEDCD);
+overflow:hidden;
+text-align:center;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+max-width:500px;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:12px;
+font-size:16px;
+cursor:pointer;
+background:#D3FAC7;
+transition:0.2s;
+}
+
+button:hover{
+background:#B7E4C7;
+}
+
+#loveMeter{
+width:100%;
+}
+
+.hearts{
+position:absolute;
+font-size:30px;
+animation: float 15s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container" id="main">
+
+<h1 id="question">Do you like me?</h1>
+
+<button onclick="yes1()">Yes</button>
+<button id="noBtn" onclick="no1()">No</button>
+
+</div>
+
+
+<audio id="music" autoplay loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9b59f54d30.mp3">
+</audio>
+
+<script>
+
+let stage=1
+
+const main=document.getElementById("main")
+const question=document.getElementById("question")
+
+const noBtn=document.getElementById("noBtn")
+
+noBtn.addEventListener("mouseover",()=>{
+noBtn.style.position="absolute"
+noBtn.style.left=Math.random()*80+"%"
+noBtn.style.top=Math.random()*80+"%"
+})
+
+function yes1(){
+
+stage=2
+
+main.innerHTML=`
+
+<h1>How much do you love me?</h1>
+
+<input type="range" min="0" max="5000" value="100" id="loveMeter">
+
+<p id="percent">100%</p>
+
+<button onclick="next()">Next ❤️</button>
+
+`
+
+const slider=document.getElementById("loveMeter")
+const percent=document.getElementById("percent")
+
+slider.oninput=()=>{
+percent.innerText=slider.value+"%"
+}
+
+}
+
+function no1(){
+alert("I don't like you, I love you ❤️")
+}
+
+function next(){
+
+stage=3
+
+main.innerHTML=`
+
+<h1>You are mine and mine alone and you will never ever ever be shared</h1>
+
+<button onclick="agree()">Agree</button>
+
+<button id="runBtn">Disagree</button>
+
+`
+
+const runBtn=document.getElementById("runBtn")
+
+runBtn.addEventListener("mouseover",()=>{
+runBtn.style.position="absolute"
+runBtn.style.left=Math.random()*80+"%"
+runBtn.style.top=Math.random()*80+"%"
+})
+
+}
+
+function agree(){
+
+main.innerHTML=`
+
+<h1>You are crazyyyyyy ❤️</h1>
+
+<p>
+Hey kouki i know what we’re going through isn’t easy and that this is a rough time but i wanted to tell you how proud i am of youu. You are actually the strongest person i ever met. And you are able to go through things that no one would ever be able to handle.
+
+You are so strong and your faith is even stronger, and i am so proud of you.
+
+I want you to know that i am here for you through everything and that i will never ever leave your side.
+
+Everytime i say I love you more, I don't mean more than you love me.  
+I mean I love you more than the bad days ahead of us.  
+I love you more than any fight we ever have.  
+I love you more than any rough time we go through.  
+I love you more than distance.  
+I love you more than obstacles.  
+I love you more than the odds stacked against me.
+
+I love you more than anything.
+</p>
+
+`
+
+createHearts()
+
+}
+
+function createHearts(){
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div")
+
+heart.innerHTML="❤️"
+
+heart.className="hearts"
+
+heart.style.left=Math.random()*100+"%"
+
+heart.style.animationDuration=10+Math.random()*10+"s"
+
+document.body.appendChild(heart)
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
